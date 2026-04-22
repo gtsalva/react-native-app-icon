@@ -1,0 +1,38 @@
+{
+  "name": "doicon",
+  "version": "0.1.0",
+  "description": "Generate iOS and Android app icons from a single source image",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "doicon": "./bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node bin/cli.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ios",
+    "android",
+    "icons",
+    "react-native",
+    "app-icon"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.0.0",
+    "culori": "^4.0.2",
+    "sharp": "^0.33.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/culori": "^4.0.1",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
