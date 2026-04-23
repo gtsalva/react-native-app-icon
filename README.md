@@ -1,7 +1,7 @@
 # react-native-app-icon
 
 [![npm](https://img.shields.io/npm/v/react-native-app-icon)](https://www.npmjs.com/package/react-native-app-icon)
-[![GitHub](https://img.shields.io/badge/github-gtsalva%2Fdoicon-blue)](https://github.com/gtsalva/doicon)
+[![GitHub](https://img.shields.io/badge/github-gtsalva%2Freact-native-app-icon-blue)](https://github.com/gtsalva/react-native-app-icon)
 
 Generate all iOS and Android app icons from a single source image. One command, zero manual resizing.
 
