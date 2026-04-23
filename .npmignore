@@ -1,4 +1,6 @@
 src/
 tsconfig.json
+tsconfig*.json
 *.map
 .gitignore
+.npmignore

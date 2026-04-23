@@ -1,5 +1,8 @@
 # doicon
 
+[![npm](https://img.shields.io/npm/v/doicon)](https://www.npmjs.com/package/doicon)
+[![GitHub](https://img.shields.io/badge/github-gtsalva%2Fdoicon-blue)](https://github.com/gtsalva/doicon)
+
 Generate all iOS and Android app icons from a single source image. One command, zero manual resizing.
 
 ## What it generates

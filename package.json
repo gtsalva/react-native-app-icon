@@ -21,6 +21,14 @@
     "app-icon"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gtsalva/doicon.git"
+  },
+  "homepage": "https://github.com/gtsalva/doicon#readme",
+  "bugs": {
+    "url": "https://github.com/gtsalva/doicon/issues"
+  },
   "dependencies": {
     "commander": "^12.0.0",
     "culori": "^4.0.2",
