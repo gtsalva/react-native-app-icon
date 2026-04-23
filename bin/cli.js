@@ -6,7 +6,7 @@ const { run } = require('../dist/index');
 const program = new Command();
 
 program
-  .name('doicon')
+  .name('app-icon')
   .description('Generate iOS and Android app icons from a single source image')
   .version(require('../package.json').version)
   .option('-c, --config <path>', 'Path to config file (default: doicon.config.json)')

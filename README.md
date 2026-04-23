@@ -1,6 +1,6 @@
-# doicon
+# react-native-app-icon
 
-[![npm](https://img.shields.io/npm/v/doicon)](https://www.npmjs.com/package/doicon)
+[![npm](https://img.shields.io/npm/v/react-native-app-icon)](https://www.npmjs.com/package/react-native-app-icon)
 [![GitHub](https://img.shields.io/badge/github-gtsalva%2Fdoicon-blue)](https://github.com/gtsalva/doicon)
 
 Generate all iOS and Android app icons from a single source image. One command, zero manual resizing.
@@ -32,7 +32,7 @@ Play Store icon: `android/app/src/main/ic_launcher-playstore.png` (512×512, alw
 ## Install
 
 ```bash
-npm install --save-dev doicon
+npm install --save-dev react-native-app-icon
 ```
 
 ---
@@ -40,19 +40,19 @@ npm install --save-dev doicon
 ## Usage
 
 ```bash
-npx doicon                        # generate iOS + Android
-npx doicon --only ios
-npx doicon --only android
-npx doicon --dry-run              # preview without writing files
-npx doicon --verbose              # show each file as it's written
-npx doicon --config other.json    # use a custom config path
+npx app-icon                        # generate iOS + Android
+npx app-icon --only ios
+npx app-icon --only android
+npx app-icon --dry-run              # preview without writing files
+npx app-icon --verbose              # show each file as it's written
+npx app-icon --config other.json    # use a custom config path
 ```
 
 Add it to your `package.json` scripts:
 
 ```json
 "scripts": {
-  "icons": "doicon"
+  "icons": "app-icon"
 }
 ```
 

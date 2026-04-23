@@ -1,11 +1,11 @@
 {
-  "name": "doicon",
+  "name": "react-native-app-icon",
   "version": "0.1.0",
   "description": "Generate iOS and Android app icons from a single source image",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
-    "doicon": "./bin/cli.js"
+    "app-icon": "bin/cli.js"
   },
   "scripts": {
     "build": "tsc",
@@ -23,7 +23,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gtsalva/doicon.git"
+    "url": "git+https://github.com/gtsalva/doicon.git"
   },
   "homepage": "https://github.com/gtsalva/doicon#readme",
   "bugs": {
