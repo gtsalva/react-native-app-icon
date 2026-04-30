@@ -46,8 +46,6 @@ export async function generateAndroid(config: DoiconConfig, opts: { verbose: boo
     const foregroundSource = foreground?.image
       ? path.resolve(process.cwd(), foreground.image)
       : config.source;
-    const foregroundTransform = { ...config.transform, padding: foreground?.padding ?? 0.25 };
-    const adaptiveBg = android.adaptiveIcon?.background ?? config.background;
 
     const foregroundFilename = useCustomSlug
       ? `android_${android.appSlug}.${fmt}`
@@ -58,8 +56,8 @@ export async function generateAndroid(config: DoiconConfig, opts: { verbose: boo
       outPath: path.join(dir, foregroundFilename),
       sourcePath: foregroundSource,
       size,
-      background: adaptiveBg,
-      transform: foregroundTransform,
+      background: config.background,
+      transform: config.transform,
       format: fmt,
       opts,
     });
