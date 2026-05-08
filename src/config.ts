@@ -40,6 +40,7 @@ const AndroidSchema = z.object({
   appSlug: z.string().min(1).optional(),
   format: z.enum(['png', 'webp']).default('png'),
   round: z.boolean().default(false),
+  transform: TransformSchema.partial().optional(),
   adaptiveIcon: z.object({
     background: BackgroundSchema,
     foreground: z.object({

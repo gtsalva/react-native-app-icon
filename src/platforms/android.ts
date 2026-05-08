@@ -17,6 +17,9 @@ const PLAY_STORE_PATH = 'android/app/src/main/ic_launcher-playstore.png';
 
 export async function generateAndroid(config: DoiconConfig, opts: { verbose: boolean; dryRun: boolean }): Promise<void> {
   const android = config.android!;
+  const androidTransform = android.transform
+    ? { ...config.transform, ...android.transform }
+    : config.transform;
   const fmt = android.format ?? 'png';
   const useCustomSlug = !!android.appSlug;
 
@@ -36,7 +39,7 @@ export async function generateAndroid(config: DoiconConfig, opts: { verbose: boo
       sourcePath: config.source,
       size,
       background: config.background,
-      transform: config.transform,
+      transform: androidTransform,
       format: fmt,
       opts,
     });
@@ -57,7 +60,7 @@ export async function generateAndroid(config: DoiconConfig, opts: { verbose: boo
       sourcePath: foregroundSource,
       size,
       background: config.background,
-      transform: config.transform,
+      transform: androidTransform,
       format: fmt,
       opts,
     });
@@ -70,7 +73,7 @@ export async function generateAndroid(config: DoiconConfig, opts: { verbose: boo
         sourcePath: config.source,
         size,
         background: config.background,
-        transform: { ...config.transform, borderRadius: 0.5 },
+        transform: { ...androidTransform, borderRadius: 0.5 },
         format: fmt,
         opts,
       });
@@ -84,7 +87,7 @@ export async function generateAndroid(config: DoiconConfig, opts: { verbose: boo
     sourcePath: config.source,
     size: PLAY_STORE_SIZE,
     background: config.background,
-    transform: config.transform,
+    transform: androidTransform,
     format: 'png',
     opts,
   });
