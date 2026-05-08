@@ -40,6 +40,7 @@ const AndroidSchema = z.object({
   appSlug: z.string().min(1).optional(),
   format: z.enum(['png', 'webp']).default('png'),
   round: z.boolean().default(false),
+  autoScale: z.number().min(0.1).max(1.0).optional(),
   transform: TransformSchema.partial().optional(),
   adaptiveIcon: z.object({
     background: BackgroundSchema,
@@ -50,7 +51,9 @@ const AndroidSchema = z.object({
   }).optional(),
 }).optional();
 
-const IosSchema = z.object({}).optional();
+const IosSchema = z.object({
+  autoScale: z.number().min(0.1).max(1.0).optional(),
+}).optional();
 
 export const DoiconConfigSchema = z.object({
   $schema: z.string().optional(),

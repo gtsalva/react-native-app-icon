@@ -27,6 +27,10 @@ function findAssetCatalog(): string {
 export async function generateIos(config: DoiconConfig, opts: { verbose: boolean; dryRun: boolean }): Promise<void> {
   const outDir = findAssetCatalog();
   const relPath = path.relative(process.cwd(), outDir);
+  const ios = config.ios;
+  const iosTransform = ios?.autoScale != null
+    ? { ...config.transform, scale: ios.autoScale / (1 - 2 * config.transform.padding) }
+    : config.transform;
 
   console.log(`\niOS — ${IOS_SIZES.length} icons → ${relPath}`);
 
@@ -40,7 +44,7 @@ export async function generateIos(config: DoiconConfig, opts: { verbose: boolean
       const buffer = await renderIcon(config.source, {
         size,
         background: config.background,
-        transform: config.transform,
+        transform: iosTransform,
       });
       fs.writeFileSync(outPath, buffer);
     }

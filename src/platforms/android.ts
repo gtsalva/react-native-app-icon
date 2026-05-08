@@ -17,9 +17,12 @@ const PLAY_STORE_PATH = 'android/app/src/main/ic_launcher-playstore.png';
 
 export async function generateAndroid(config: DoiconConfig, opts: { verbose: boolean; dryRun: boolean }): Promise<void> {
   const android = config.android!;
-  const androidTransform = android.transform
+  const baseTransform = android.transform
     ? { ...config.transform, ...android.transform }
     : config.transform;
+  const androidTransform = android.autoScale != null
+    ? { ...baseTransform, scale: android.autoScale / (1 - 2 * config.transform.padding) }
+    : baseTransform;
   const fmt = android.format ?? 'png';
   const useCustomSlug = !!android.appSlug;
 
